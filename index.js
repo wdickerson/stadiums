@@ -7,10 +7,20 @@ L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
 }).addTo(stadiumMap);
 
 
+
+
 // add stadiums to map
 //////////////////////
+const yankeeLogo = L.icon({
+    iconUrl: 'images/yankee-logo.png',
+    iconSize:     [20, 20], // size of the icon
+});
 
-const yankeeStadium = L.marker([40.8296, -73.9262]).addTo(stadiumMap);
+const yankeeStadium = L.marker(
+  [40.8296, -73.9262],
+  {icon: yankeeLogo}
+).addTo(stadiumMap);
+
 yankeeStadium.bindPopup(`
   <h1>Yankee Stadium</h1>
   <img src="images/yankee-stadium.jpg" />
